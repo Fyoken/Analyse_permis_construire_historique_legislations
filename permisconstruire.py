@@ -16,19 +16,19 @@ import sqlite3
 from sqlalchemy import create_engine
 import shutil
 
-drive.mount('/content/gdrive')
+#drive.mount('/content/gdrive')
 
 """# Concaténation des fichiers csv en une base SQL"""
 
 # Création d'une base SQL
 # Répertoire contenant les fichiers CSV
-repertoire_csv = '/content/gdrive/MyDrive/PermisConstruire/'
+repertoire_csv = './'
 
 # Liste des fichiers CSV dans le répertoire
 fichiers_csv = [f for f in os.listdir(repertoire_csv) if f.endswith('.csv')]
 
 # Créer une connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Créer une base de données SQLite
 engine = create_engine('sqlite:///permisconstruire.db', echo=False)
@@ -40,7 +40,7 @@ for fichier_csv in fichiers_csv:
 
 # Fermer la connexion
 engine.dispose()
-db_path = '/content/gdrive/MyDrive/permisconstruire.db'
+db_path = './permisconstruire.db'
 shutil.copy(db_path, os.path.join(repertoire_csv, 'permisconstruire.db'))
 
 # Fermer la connexion
@@ -49,7 +49,7 @@ conn.close()
 """# Vérification des données"""
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête pour vérifier que tous les fichiers sont présents
 query_sample = "SELECT distinct(source) FROM permis_construire LIMIT 30;"
@@ -64,7 +64,7 @@ print(df_sample)
 conn.close()
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête pour voir à quoi ressemble la base de données
 query_sample = "SELECT * FROM permis_construire LIMIT 10;"
@@ -81,7 +81,7 @@ conn.close()
 """# Uniformisation de la colonne de département"""
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 cursor = conn.cursor()
 
 # Exécuter la requête SQL
@@ -104,7 +104,7 @@ conn.close()
 """# Exploration des données"""
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête pour afficher le nombre de bâtiments par année et par département
 query_sample = "SELECT PMI_ANNEE_DEP AS Annee, DEP_COD_DEP AS CodeDepartement, COUNT(*) AS nbBat FROM permis_construire WHERE PMI_ANNEE_DEP IS NOT NULL AND DEP_COD_DEP IS NOT NULL GROUP BY PMI_ANNEE_DEP, DEP_COD_DEP ORDER BY PMI_ANNEE_DEP, DEP_COD_DEP;"
@@ -133,7 +133,7 @@ plt.show()
 
 # Zoom sur l'île de France
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête SQL pour compter le nombre de bâtiments par année et en île de France
 query = """
@@ -163,7 +163,7 @@ plt.show()
 """# Exploration du nombre d'étages"""
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête pour afficher le nombre d'étages dans les bâtiments par année et par département
 query_sample = "SELECT PMI_ANNEE_DEP AS Annee, DEP_COD_DEP AS CodeDepartement, PHR_NB_NIVMAX as nbetages FROM permis_construire WHERE PMI_ANNEE_DEP IS NOT NULL AND DEP_COD_DEP IS NOT NULL GROUP BY PMI_ANNEE_DEP, DEP_COD_DEP ORDER BY PMI_ANNEE_DEP, DEP_COD_DEP;"
@@ -199,7 +199,7 @@ plt.show()
 """# Hauteur moyenne des bâtiments en Ile de France"""
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête pour afficher la hauteur dans les bâtiments par année en Ile de France
 query_sample = "SELECT PMI_ANNEE_DEP AS Annee, DEP_COD_DEP AS CodeDepartement, PHR_NB_NIVMAX as hauteur FROM permis_construire WHERE PMI_ANNEE_DEP IS NOT NULL AND DEP_COD_DEP IS NOT NULL AND REG_REGION = '11' GROUP BY PMI_ANNEE_DEP, DEP_COD_DEP ORDER BY PMI_ANNEE_DEP, DEP_COD_DEP;"
@@ -226,7 +226,7 @@ plt.show()
 """# Coefficient de prise au sol"""
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 query_sample = """
 SELECT
@@ -305,7 +305,7 @@ plt.show()
 
 import matplotlib.pyplot as plt
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête pour afficher le coef de prise au sol dans les bâtiments par année et par département
 query_sample = "SELECT PMI_ANNEE_DEP AS Annee, DEP_COD_DEP AS CodeDepartement, PHR_SUPERFICIE_TERR as coef FROM permis_construire WHERE PMI_ANNEE_DEP IS NOT NULL AND DEP_COD_DEP IS NOT NULL GROUP BY PMI_ANNEE_DEP, DEP_COD_DEP ORDER BY PMI_ANNEE_DEP, DEP_COD_DEP;"
@@ -340,11 +340,11 @@ plt.show()
 
 """# Distribution de la hauteur des bâtiments par commune au cours du temps et première détection de bunching"""
 
-url_correspondance_communes = '/content/gdrive/MyDrive/PermisConstruire/v_commune_2023.csv'
+url_correspondance_communes = './v_commune_2023.csv'
 df_correspondance_communes = pd.read_csv(url_correspondance_communes, sep=',')
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête pour afficher la distribution de la hauteur des bâtiments par année dans chaque commune
 query_sample = """
@@ -464,11 +464,11 @@ for commune, data in df_merged.groupby(['LIBELLE']):
 """# Remise en question de la variable nombre d'étages : vérification de la validité par l'étude des logements collectifs"""
 
 import matplotlib.pyplot as plt
-url_correspondance_communes = '/content/gdrive/MyDrive/PermisConstruire/v_commune_2023.csv'
+url_correspondance_communes = './v_commune_2023.csv'
 df_correspondance_communes = pd.read_csv(url_correspondance_communes, sep=',')
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Requête pour afficher la distribution de la hauteur des bâtiments par année dans chaque commune
 query_sample = """
@@ -626,7 +626,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Exécution de la requête SQL pour extraire les données
 query = """
@@ -665,7 +665,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Département spécifique que vous souhaitez visualiser
 departement_cible = '060'
@@ -707,7 +707,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Code INSEE de la commune spécifique que vous souhaitez visualiser
 code_insee_cible = '60057'
@@ -748,7 +748,7 @@ conn.close()
 """# Code Habitations"""
 
 # Connexion à la base de données SQLite
-conn = sqlite3.connect('/content/gdrive/MyDrive/ING3/PFE/permisconstruire.db')
+conn = sqlite3.connect('./ING3/PFE/permisconstruire.db')
 
 query_sample = """
 SELECT
@@ -886,7 +886,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Exécution de la requête SQL pour extraire les données
 query = """
@@ -938,7 +938,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Code INSEE de la commune spécifique que vous souhaitez visualiser
 code_insee_cible = '60057'
@@ -991,7 +991,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Département spécifique que vous souhaitez visualiser
 departement_cible = '060'  # Remplacez '60' par le code de votre département
@@ -1053,7 +1053,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Code INSEE de la commune spécifique que vous souhaitez visualiser
 code_insee_cible = '60057'  # Remplacez 'XXXXX' par le code INSEE de votre commune
@@ -1099,7 +1099,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Code INSEE de la commune spécifique que vous souhaitez visualiser
 code_insee_cible = '21231'
@@ -1149,11 +1149,11 @@ conn.close()
 import sqlite3
 import matplotlib.pyplot as plt
 
-url_correspondance_communes = '/content/gdrive/MyDrive/PermisConstruire/v_commune_2023.csv'
+url_correspondance_communes = './v_commune_2023.csv'
 df_correspondance_communes = pd.read_csv(url_correspondance_communes, sep=',')
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Code INSEE de St Maur des fossés
 code_insee_cible = '94068'
@@ -1348,7 +1348,7 @@ from scipy.stats import gaussian_kde
 import matplotlib.pyplot as plt
 
 # SQLite connection
-conn = sqlite3.connect('/content/gdrive/MyDrive/ING3/PFE/permisconstruire.db')
+conn = sqlite3.connect('./ING3/PFE/permisconstruire.db')
 
 # Read data from the database
 def read_data(conn, query):
@@ -1477,7 +1477,7 @@ from scipy.stats import gaussian_kde
 import matplotlib.pyplot as plt
 
 # SQLite connection
-conn = sqlite3.connect('/content/gdrive/MyDrive/ING3/PFE/permisconstruire.db')
+conn = sqlite3.connect('./ING3/PFE/permisconstruire.db')
 
 # Read data from the database
 def read_data(conn, query):
@@ -1497,7 +1497,7 @@ def plot_kde(values, kde_estimates):
     plt.legend()
     plt.show()
 
-df_determine_cos = pd.read_excel('/content/gdrive/MyDrive/ING3/PFE/tab.xlsx')
+df_determine_cos = pd.read_excel('./ING3/PFE/tab.xlsx')
 
 df_subset = df_determine_cos.loc[:, ['c_coinsee', 'cos']]
 elements_uniques = df_subset['c_coinsee'].unique()
@@ -1523,7 +1523,7 @@ print(grouped_stats)
 
 import random
 
-conn = sqlite3.connect('/content/gdrive/MyDrive/ING3/PFE/permisconstruire.db')
+conn = sqlite3.connect('./ING3/PFE/permisconstruire.db')
 
 codgeoList = grouped_stats['c_coinsee']
 print(type(codgeoList))
@@ -1666,8 +1666,8 @@ for i in range(0,len(coslist)):
     df_vide = pd.DataFrame([nouvelle_ligne])
     df_vide_final = pd.concat([df_vide_final, df_vide], ignore_index = True)
 
-df_vide_final = pd.read_csv('/content/gdrive/MyDrive/PermisConstruire/df_vide_final.csv')
-df_determine_cos = pd.read_excel('/content/gdrive/MyDrive/ING3/PFE/tab.xlsx')
+df_vide_final = pd.read_csv('./df_vide_final.csv')
+df_determine_cos = pd.read_excel('./ING3/PFE/tab.xlsx')
 
 df_subset = df_determine_cos.loc[:, ['c_coinsee', 'codeb', 'cos']]
 df_subset['cos'] = df_subset['cos'].fillna(0)
@@ -1678,7 +1678,7 @@ display(result)
 
 """# Entraînement de modèles"""
 
-df_determine_cos = pd.read_excel('/content/gdrive/MyDrive/PermisConstruire/tab.xlsx')
+df_determine_cos = pd.read_excel('./tab.xlsx')
 
 df_subset = df_determine_cos.loc[:, ['c_coinsee', 'cos']]
 elements_uniques = df_subset['c_coinsee'].unique()
@@ -1844,7 +1844,7 @@ print("Matrice de confusion:")
 print(conf_matrix)
 
 # Connexion à la base de données
-conn = sqlite3.connect('/content/gdrive/MyDrive/PermisConstruire/permisconstruire.db')
+conn = sqlite3.connect('./permisconstruire.db')
 
 # Exécution de la requête SQL pour extraire les données
 query = f"""
@@ -1906,7 +1906,7 @@ merged_df = merged_df.dropna()
 # Faire des prédictions avec votre modèle RandomForestClassifier
 merged_df['predictions'] = rf_model.predict(merged_df[['c_coinsee', 'reel_cos_sum', 'reel_cos_decile1', 'reel_cos_decile2', 'reel_cos_decile3', 'reel_cos_decile4', 'reel_cos_decile5', 'reel_cos_decile6','reel_cos_decile7', 'reel_cos_decile8', 'reel_cos_decile9']])
 
-merged_df.to_csv('/content/gdrive/MyDrive/PermisConstruire/resultats_predictions.csv', index=False)
+merged_df.to_csv('./resultats_predictions.csv', index=False)
 
 # Sélectionner les caractéristiques appropriées pour les prédictions
 features = merged_df[['c_coinsee', 'reel_cos_sum', 'reel_cos_decile1', 'reel_cos_decile2', 'reel_cos_decile3', 'reel_cos_decile4', 'reel_cos_decile5', 'reel_cos_decile6','reel_cos_decile7', 'reel_cos_decile8', 'reel_cos_decile9']]
@@ -1924,7 +1924,7 @@ predictions_cnn = (model.predict(features_cnn) > 0.5).astype("int32").flatten()
 merged_df['predictions_cnn'] = predictions_cnn
 
 # Enregistrer les prédictions dans un fichier CSV
-merged_df.to_csv('/content/gdrive/MyDrive/PermisConstruire/resultats_predictions_cnn.csv', index=False)
+merged_df.to_csv('./resultats_predictions_cnn.csv', index=False)
 
 # Compter le nombre de prédictions de classe 1 et de classe 0
 count_1 = np.count_nonzero(predictions_cnn)
