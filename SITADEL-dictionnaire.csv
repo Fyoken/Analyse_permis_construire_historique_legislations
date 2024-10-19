@@ -1,0 +1,261 @@
+﻿SITADEL
+"SITADEL recense l'ensemble des opérations de construction à usage d'habitation (logement) et à usage non résidentiel (locaux) soumises à la procédure d'instruction du permis de construire. Il a pour objectif de mesurer la construction afin de répondre aux besoins variés d'études, de prévision et d'orientation. Il permet de localiser finement l'implantation des logements neufs et des locaux d'activité. Il sert à estimer précisément l'offre de logements par type d'habitat et à prévoir son évolution. Il sert également à mesurer et prévoir l'activité du secteur de la construction et à orienter les politiques publiques menées par les ministères chargés de l'urbanisme et du logement. 
+
+Les données de SITADEL sont alimentées par l'ensemble des informations recueillies dans les mairies concernant les actes d'urbanisme. Il s'agit principalement des informations du permis de construire mais également celles des déclarations de travaux, des permis de démolir et de lotir. Les données mises à disposition par le CASD sont à un niveau individuel (listes de permis). "
+
+
+
+
+sitadel_hors_nom_19
+"Données de SITADEL pour l'année 2019"
+
+"Nom de la variable";Libellé;Modalités
+PHR_ID_PERMIS;"Identifiant du permis";
+TPE_COD_TYPPERMIS;"Type de permis (en clair)";
+DEP_COD_DEP;"Code département";"Code département - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+COM_COD_COM;"Code commune";"Code commune - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+PMI_ANNEE_DEP;"Année de dépôt";
+PMI_NUM_PERMIS;"Numéro du permis";
+REG_REGION;"Code région";"Code région - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+PMI_NUMPER_CONCAT;"Numéro de permis concaténé";
+CIN_COD_CENTRINSTR;"Code centre instructeur";
+STA_COD_STATDOSS;"Statut du dossier";"1 - En cours";"2 - Autorisé";"3 - Refusé";"4 - Annulé";"5 - Commencé";"6 - Terminé";"7 - Sursis à statuer";"8 - Supprimé"
+PMI_NUMDERN_MODIFICATIF;"Dernier indice modificatif reçu";
+PMI_REC_ARCHI;"Recours à un architecte";"0 - Non";"1 - Oui"
+PMI_CNIL;"Code CNIL autorisant la diffusion des informations nominatives";"0 - Accord";"1 - Interdiction"
+PMI_DAT_PREMVERS;"Date du premier versement dans l’infocentre (attention aux permis migrés, la date correspond à la date de migration)";
+PMI_DAT_MOD;"Date de réception dans la base de production du dernier mouvement reçu";
+PMI_DAT_ATTACHDOS;"Date de réception dans la base de production du premier mouvement reçu";
+PMI_VAL_FORCEE;"Indicateur « validation forcée »";"0 - Non";"1 - Oui"
+PMI_SUPPRIME;"Indicateur « permis supprimé »";"0 - Non";"1 - Oui"
+PMI_DAT_CREAT;"Date de création";
+PMI_PC1SECT_CADAST;"Section cadastrale 1";
+PMI_PC1NUM_CADAST;"Numéro cadastral 1";
+PMI_PC2SECT_CADAST;"Section cadastrale 2";
+PMI_PC2NUM_CADAST;"Numéro cadastral 2";
+PMI_PC3SECT_CADAST;"Section cadastrale 3";
+PMI_PC3NUM_CADAST;"Numéro cadastral 3";
+PMI_NB_DOC;"Nombre de DOC reçus";
+PMI_NB_DAACT;"Nombre de DAACT reçus";
+PMI_TER_NUM_VOIE;"Numéro de voie du terrain";
+PMI_TER_TYP_VOIE;"Type de voie du terrain";
+PMI_TER_LIB_VOIE;"Libellé de la voie du terrain";
+PMI_TER_LIEU_DIT;"Lieu-dit du terrain";
+PMI_TER_LOCALITE;"Localité du terrain";
+PMI_TER_COD_POST;"Code postal du terrain";
+PMI_TER_BOIT_POST;"Boite postal du terrain";
+PMI_TER_CEDEX;"Cedex de terrain";
+PMI_DEM_TYP_MO;"Type de personne du pétitionnaire";"1 - Personne physique";"2 - Personne morale"
+PMI_DEM_RAIS_SOC;"Raison sociale du demandeur";
+PMI_DEM_NUM_SIRET;"Numéro SIRET du demandeur";
+PMI_DEM_CAT_JUR;"Catégorie juridique du demandeur";
+PMI_DEM_COD_APE;"Code APE du demandeur";
+PMI_TIE_RAIS_SOC;"Raison sociale du tiers désigné";
+PMI_ARC_CONSEIL_GEN;"Conseil général de l’architecte";
+CAT_COD_CATMO_LOGT;"Catégorie de maître d’ouvrage Logement";"10 - Particuliers sans autre indication (SAI)";"11 - Particuliers purs";"12 - SCI de particuliers";"20 - Bailleurs sociaux SAI";"21 - Organismes HLM";"22 - EPL (ex SEM)";"23 - Autres organismes";"30 - Promoteurs (SAI)";"31 - Promoteurs reconnus comme tels";"32 - SCI ou autres supports de programmes de construction";"33 - Autres professionnels de la construction";"40 - Administrations publiques (SAI)";"41 - État, ODAC (Organismes Divers d'Administration Centrale) et organismes rattachés divers";"42 - Départements et régions";"43 - Communes, EPIC, syndicats de communes";"50 - Autres sociétés (de fait, intervenant pour compte propre)";"80 - Sans objet (car locaux purs)";"90 - Non déterminé (valeur par défaut à la création du permis)"
+CAT_COD_CATMO_LOC;"Catégorie de maître d’ouvrage Locaux";"1 - Maîtrise d'ouvrage privée";"2 - Maître d'ouvrage publique";"8 - Sans objet (car absence de locaux)";"9 - Non déterminé (valeur par défaut à la création du permis)"
+PMI_COD_ORIGINCATMO;"Origine de la catégorie de maître d’ouvrage";"SIR - Numéro SIREN";"INJ - Injection";"DEF - Définition";"DUR - Via recherche lexicale : résultat solide";"MOL - Via recherche lexicale : résultat moins solide"
+TDO_COD_TYPDON;"Type de donnée";"B - Brute";"R - Rectifiée"
+PHR_NUM_MODIF;"Indice modificatif";
+AUT_COD_AUTORITE;"Code de l’autorité compétente";"1 - Au nom de la commune";"2 - Au nom de l'Etat";"3 - Au nom de l'EPCI"
+PHR_DAT_LIMITINSTR;"Date limite de l’instruction (date de réception de l’en cours + 3 mois)";
+NAD_COD_NATDEC;"Code « nature de décision »";"0 - En cours";"1 - Rejet tacite";"2 - Octroi tacite";"3 - Refus tacite";"4 - Octroi";"5 - Accord avec prescription";"6 - Refus";"7 - Sursis à statuer";"8 - Annulation"
+MAN_COD_MOTANNUL;"Code « motif d’annulation »";"1 - A la demande du pétitionnaire";"2 - Annulation par une juridiction administrative"
+TCO_COD_TYPCONSTR;"Code « type de construction »";"1 - Projets sans mouvement de SHON";"2 - Démolition simple";"3 - Démolitions multiples";"4 - Agrandissement de logements existants";"5 - Maison individuelle pure";"6 - Pure de logements en résidence";"7 - Autres constructions pures logements";"8 - Construction pure de locaux";"9 - Transformation de locaux en logements";"10 - Transformation de locaux en logements";"11 - Transformation de locaux";"12 - Autres opérations sur habitation";"13 - Autres opérations sur habitation";"14 - Autres dossiers"
+PHR_DESC_TRAV;"Description des travaux";
+PHR_NB_NIVMAX;"Nombre de niveau maximum";
+PHR_NB_LOGTDEMOL;"Nombre de logements démolis";
+PHR_NB_LOGTIND;"Nombre de logements individuels";
+PHR_NB_LOGTCOLL;"Nombre de logements collectifs";
+PHR_NB_LOGTTOT;"Nombre de logements total";
+PHR_NB_CHAMBRES;"Nombre de chambres (si foyer ou autres hébergements)";
+PHR_NB_PIECESMI;"Nombre de pièces (si maison individuelle)";
+PHR_NB_LOT;"Nombre de lots projetés (si lotissement)";
+PHR_SUPERFICIE_TERR;"Superficie du terrain";
+PHR_SHON_TOTLOT;"Surface maximale du lot";
+PHR_LOCATIF_SOCIAUX;"Nombre de logements locatifs sociaux";
+PHR_HORS_PTZ;"Nombre de logements aidés (hors PTZ)";
+PHR_PTZ;"Nombre de logements PTZ de la tranche";
+PHR_AUTRE_FIN;"Nombre de logements « autres financements »";
+PHR_1_PIECE;"Nombre de logements de 1 pièce";
+PHR_2_PIECES;"Nombre de logements de 2 pièces";
+PHR_3_PIECES;"Nombre de logements de 3 pièces";
+PHR_4_PIECES;"Nombre de logements de 4 pièces";
+PHR_5_PIECES;"Nombre de logements de 5 pièces";
+PHR_6_PIECES;"Nombre de logements de 6 pièces et plus";
+PHR_LI1_SHONANT;"Surface ""habitation"" existante avant travaux";
+PHR_LI2_SHONANT;"Surface ""hébergement hôtelier"" existante avant travaux";
+PHR_LI3_SHONANT;"Surface ""bureau"" existante avant travaux";
+PHR_LI4_SHONANT;"Surface ""commerce"" existante avant travaux";
+PHR_LI5_SHONANT;"Surface ""artisanat"" existante avant travaux";
+PHR_LI6_SHONANT;"Surface ""industrie"" existante avant travaux";
+PHR_LI7_SHONANT;"Surface ""exploitation agricole ou forestière"" existante avant travaux";
+PHR_LI8_SHONANT;"Surface ""entrepôt"" existante avant travaux";
+PHR_LI9_SHONANT;"Surface ""service public"" existante avant travaux";
+PHR_LI1_SHONCR;"Surface ""habitation"" nouvelle construite";
+PHR_LI2_SHONCR;"Surface ""hébergement hôtelier"" nouvelle construite";
+PHR_LI3_SHONCR;"Surface ""bureau"" nouvelle construite";
+PHR_LI4_SHONCR;"Surface ""commerce"" nouvelle construite";
+PHR_LI5_SHONCR;"Surface ""artisanat"" nouvelle construite";
+PHR_LI6_SHONCR;"Surface ""industrie"" nouvelle construite";
+PHR_LI7_SHONCR;"Surface ""exploitation agricole ou forestière"" nouvelle construite";
+PHR_LI8_SHONCR;"Surface ""entrepôt"" nouvelle construite";
+PHR_LI9_SHONCR;"Surface ""Service public"" nouvelle construite";
+PHR_LI1_SHON2CR;"Surface ""habitation"" créée par transformation de SHOB en SHON";
+PHR_LI2_SHON2CR;"Surface ""hébergement hôtelier"" créée par transformation de SHOB en SHON";
+PHR_LI3_SHON2CR;"Surface ""bureau"" créée par transformation de SHOB en SHON";
+PHR_LI4_SHON2CR;"Surface ""commerce"" créée par transformation de SHOB en SHON";
+PHR_LI5_SHON2CR;"Surface ""artisanat"" créée par transformation de SHOB en SHON";
+PHR_LI6_SHON2CR;"Surface ""industrie"" créée par transformation de SHOB en SHON";
+PHR_LI7_SHON2CR;"Surface ""exploitation agricole ou forestière"" créée par transformation de SHOB en SHON";
+PHR_LI8_SHON2CR;"Surface ""entrepôt"" créée par transformation de SHOB en SHON";
+PHR_LI9_SHON2CR;"Surface ""Service public"" créée par transformation de SHOB en SHON";
+PHR_LI1_SHONPROJTR;"Surface ""habitation"" créée par changement de destination";
+PHR_LI2_SHONPROJTR;"Surface ""hébergement hôtelier"" créée par changement de destination";
+PHR_LI3_SHONPROJTR;"Surface ""bureau"" créée par changement de destination";
+PHR_LI4_SHONPROJTR;"Surface ""commerce"" créée par changement de destination";
+PHR_LI5_SHONPROJTR;"Surface ""artisanat"" créée par changement de destination";
+PHR_LI6_SHONPROJTR;"Surface ""industrie"" créée par changement de destination";
+PHR_LI7_SHONPROJTR;"Surface ""exploitation agricole ou forestière"" créée par changement de destination";
+PHR_LI8_SHONPROJTR;"Surface ""entrepôt"" créée par changement de destination";
+PHR_LI9_SHONPROJTR;"Surface ""service public"" créée par changement de destination";
+PHR_LI1_SHONDEM;"Surface ""habitation"" démolie";
+PHR_LI2_SHONDEM;"Surface ""hébergement hôtelier"" démolie";
+PHR_LI3_SHONDEM;"Surface ""bureau"" démolie";
+PHR_LI4_SHONDEM;"Surface ""commerce"" démolie";
+PHR_LI5_SHONDEM;"Surface ""artisanat"" démolie";
+PHR_LI6_SHONDEM;"Surface ""industrie"" démolie";
+PHR_LI7_SHONDEM;"Surface ""exploitation agricole ou forestière"" démolie";
+PHR_LI8_SHONDEM;"Surface ""entrepôt"" démolie";
+PHR_LI9_SHONDEM;"Surface ""service public"" démolie";
+PHR_LI1_SHONANTTR;"Surface ""habitation"" supprimée par changement de destination";
+PHR_LI2_SHONANTTR;"Surface ""hébergement hôtelier"" supprimée par changement de destination";
+PHR_LI3_SHONANTTR;"Surface ""bureau"" supprimée par changement de destination";
+PHR_LI4_SHONANTTR;"Surface ""commerce"" supprimée par changement de destination";
+PHR_LI5_SHONANTTR;"Surface ""artisanat"" supprimée par changement de destination";
+PHR_LI6_SHONANTTR;"Surface ""industrie"" supprimée par changement de destination";
+PHR_LI7_SHONANTTR;"Surface ""exploitation agricole ou forestière"" supprimée par changement de destination";
+PHR_LI8_SHONANTTR;"Surface ""entrepôt"" supprimée par changement de destination";
+PHR_LI9_SHONANTTR;"Surface ""service public"" supprimée par changement de destination";
+NAP_COD_NATPROJ;"Code « nature du projet »";"1 - Nouvelle construction";"2 - Construction sur existant";"3 - Construction nouvelle et sur construction existante"
+ANN_COD_ANNEXE;"Code « type d’annexe »";"1 - Piscine";"2 - Garage";"3 - Véranda";"4 - Abri de jardin";"5 - Autre annexe";"6 - Plusieurs annexes";"7 - Pas d'annexe"
+NAR_COD_NATRES;"Code « nature de la résidence »";"1 - Résidence pour personnes âgées";"2 - Résidence étudiantes";"3 - Résidence de tourisme";"4 - Résidence hôtelière à vocation sociale";"5 - Résidence sociale";"6 - Résidence pour handicapés";"7 - Autre résidence";"8 - Projet mixte";"9 - Non rempli"
+ZOP_COD_ZONEOP;"Code «  zone opératoire »";"1 - Lotissement";"2 - ZAC";"3 - AFU";"4 - Hors zones ou ne sait pas"
+UTI_COD_UTILISATION;"Code « utilisation »";"1 - Occupation personnelle";"2 - Vente";"3 - Location";"4 - Vente ou location";"5 - Non rempli"
+TYR_COD_TYPRES;"Code « type occupation »";"1 - Résidence principale";"2 - Résidence secondaire";"3 - Non rempli"
+PUB_COD_PUBLIC;"Code « service public »";"1 - Transport";"2 - Enseignement et recherche";"3 - Santé";"4 - Action sociale";"5 - Ouvrage spécial";"6 - Culture et loisir";"7 - Non rempli";"8 - Plusieurs types renseignés"
+PHR_PER_FINDEVIE;"Code « fin de vie du permis »";"1 - Permis annulé";"2 - Permis refusé ou rejeté";"3 - Permis observé terminé";"4 - Permis supprimé";"5 - Permis à statut provisoire";"6 - Non rempli"
+PHR_DOM;"Indicateur DOM";"0 - Non";"1 - Oui"
+PHR_FRM;"Indicateur France métropolitaine";"0 - Non";"1 - Oui"
+PHR_DELAI_OC;"Délai entre autorisation et ouverture";
+PHR_DELAI_AT;"Délai entre ouverture et achèvement";
+PHR_AUT_NB_LOGIP;"Nombre de logements individuels purs autorisés";
+PHR_AUT_NB_LOGIG;"Nombre de logements individuels groupés autorisés";
+PHR_AUT_NB_LOGIND;"Nombre de logements individuels autorisés";
+PHR_AUT_NB_LOGCOL;"Nombre de logements collectifs autorisés";
+PHR_AUT_NB_LOGORD;"Nombre de logements ordinaires autorisés";
+PHR_AUT_NB_LOGRES;"Nombre de logements résidence autorisés";
+PHR_AUT_NB_LOG;"Nombre total de logements autorisés";
+PHR_AUT_SHON_LOGIP;"Surface de logements individuels purs autorisés";
+PHR_AUT_SHON_LOGIG;"Surface de logements individuels groupés autorisés";
+PHR_AUT_SHON_LOGIND;"Surface de logements individuels autorisés";
+PHR_AUT_SHON_LOGCOL;"Surface de logements collectifs autorisés";
+PHR_AUT_SHON_LOGORD;"Surface de logements ordinaires autorisés";
+PHR_AUT_SHON_LOGRES;"Surface de logements résidence autorisés";
+PHR_AUT_SHON_LOG;"Surface totale de logements autorisés";
+PHR_COM_NB_LOGIP;"Nombre de logements individuels purs commencés";
+PHR_COM_NB_LOGIG;"Nombre de logements individuels groupés commencés";
+PHR_COM_NB_LOGIND;"Nombre de logements individuels commencés";
+PHR_COM_NB_LOGCOL;"Nombre de logements collectifs commencés";
+PHR_COM_NB_LOGORD;"Nombre de logements ordinaires commencés";
+PHR_COM_NB_LOGRES;"Nombre de logements résidence commencés";
+PHR_COM_NB_LOG;"Nombre total de logements commencés";
+PHR_COM_SHON_LOGIP;"Surface des logements individuels purs commencés";
+PHR_COM_SHON_LOGIG;"Surface des logements individuels groupés commencés";
+PHR_COM_SHON_LOGIND;"Surface des logements individuels commencés";
+PHR_COM_SHON_LOGCOL;"Surface des logements collectifs commencés";
+PHR_COM_SHON_LOGORD;"Surface des logements ordinaires commencés";
+PHR_COM_SHON_LOGRES;"Surface des logements résidence commencés";
+PHR_COM_SHON_LOG;"Surface totale des logements commencés";
+PHR_CONS_SHON_LOGIP;"Surface des logements individuels purs construits";
+PHR_CONS_SHON_LOGIG;"Surface des logements individuels groupés construits";
+PHR_CONS_SHON_LOGIND;"Surface des logements individuels construits";
+PHR_CONS_SHON_LOGCOL;"Surface des logements collectifs construits";
+PHR_CONS_SHON_LOGORD;"Surface des logements ordinaires construits";
+PHR_CONS_SHON_LOGRES;"Surface des logements résidence construits";
+PHR_CONS_SHON_LOG;"Surface totale des logements construits";
+PHR_TRAN_SHON_LOGIP;"Surface des logements individuels purs créée par changement de destination";
+PHR_TRAN_SHON_LOGIG;"Surface des logements individuels groupés créée par changement de destination";
+PHR_TRAN_SHON_LOGIND;"Surface des logements individuels créée par changement de destination";
+PHR_TRAN_SHON_LOGCOL;"Surface des logements collectifs créée par changement de destination";
+PHR_TRAN_SHON_LOGORD;"Surface des logements ordinaires créée par changement de destination";
+PHR_TRAN_SHON_LOGRES;"Surface des logements résidence créée par changement de destination";
+PHR_TRAN_SHON_LOG;"Surface totale des logements  créée par changement de destination";
+PHR_TRAN2_SHON_LOGIG;"Surface des logements individuels purs créée par transformation de SHOB en SHON";
+PHR_TRAN2_SHON_LOGIP;"Surface des logements individuels groupés créée par transformation de SHOB en SHON";
+PHR_TRAN2_SHON_LOGIND;"Surface des logements individuels créée par transformation de SHOB en SHON";
+PHR_TRAN2_SHON_LOGCOL;"Surface des logements collectifs créée par transformation de SHOB en SHON";
+PHR_TRAN2_SHON_LOGORD;"Surface des logements ordinaires créée par transformation de SHOB en SHON";
+PHR_TRAN2_SHON_LOGRES;"Surface des logements résidence créée par transformation de SHOB en SHON";
+PHR_TRAN2_SHON_LOG;"Surface totale des logements créée par transformation de SHOB en SHON";
+PHR_NB_PIECNR;"Nombre de logements pour lesquels la répartition par nombres de pièces n’est pas renseignée";
+PHR_NB_FINAUTNR;"Nombre de logements autorisés pour lesquels la répartition par financement n’est pas renseignée (CERFA dépôt)";
+PHR_NB_FINCOMNR;"Nombre de logements pour lesquels la répartition par financement n’est pas renseignée (CERFA DOC)";
+PHR_NB_AUT_PIINC;"Nombre de logements autorisés pour lesquels la répartition par nombres de pièces n’est pas renseignée";
+PHR_NB_AUT_FININC;"Nombre de logements autorisés pour lesquels la répartition par financement n’est pas renseignée";
+PHR_NB_COM_FININC;"Nombre de logements commencés pour lesquels la répartition par financement n’est pas renseignée";
+PHR_AUT_SHON2_HEB;"Surface hébergement hôtelier autorisée";
+PHR_AUT_SHON3_BUR;"Surface bureau autorisée";
+PHR_AUT_SHON4_COM;"Surface commerce autorisée";
+PHR_AUT_SHON5_ART;"Surface artisanat  autorisée";
+PHR_AUT_SHON6_INDUS;"Surface industrie autorisée";
+PHR_AUT_SHON7_AGR;"Surface exploitation agricole ou forestière autorisée";
+PHR_AUT_SHON8_ENT;"Surface entrepôt autorisée";
+PHR_AUT_SHON_PUB;"Surface Service public autorisée";
+PHR_AUT_SHON9A_TRA;"Surface Service public de transport autorisée";
+PHR_AUT_SHON9B_ENS;"Surface Service public d'enseignement et recherche autorisée";
+PHR_AUT_SHON9C_SAN;"Surface Service public de santé autorisée";
+PHR_AUT_SHON9D_SOC;"Surface Service public d'action sociale autorisée";
+PHR_AUT_SHON9E_SPE;"Surface Service public d'ouvrage spécial autorisée";
+PHR_AUT_SHON9F_LOI;"Surface Service public de culture et loisir autorisée";
+PHR_AUT_SHON_LOC;"Surface totale de locaux autorisée";
+PHR_COM_SHON2_HEB;"Surface hébergement hôtelier commencée";
+PHR_COM_SHON3_BUR;"Surface bureau commencée";
+PHR_COM_SHON4_COM;"Surface commerce commencée";
+PHR_COM_SHON5_ART;"Surface artisanat  commencée";
+PHR_COM_SHON6_INDUS;"Surface industrie commencée";
+PHR_COM_SHON7_AGR;"Surface exploitation agricole ou forestière commencée";
+PHR_COM_SHON8_ENT;"Surface entrepôt commencée";
+PHR_COM_SHON_PUB;"Surface Service public commencée";
+PHR_COM_SHON9A_TRA;"Surface Service public de transport commencée";
+PHR_COM_SHON9B_ENS;"Surface Service public d'enseignement et recherche commencée";
+PHR_COM_SHON9C_SAN;"Surface Service public de santé commencée";
+PHR_COM_SHON9D_SOC;"Surface Service public d'action sociale commencée";
+PHR_COM_SHON9E_SPE;"Surface Service public d'ouvrage spécial commencée";
+PHR_COM_SHON9F_LOI;"Surface Service public de culture et loisir commencée";
+PHR_COM_SHON_LOC;"Surface totale de locaux commencée";
+PHR_NB_LOC;"Nombre de type de locaux différents (hors habitables)";
+PHR_COM_NB_FINSOC;"Nombre de logements locatifs sociaux commencés";
+PHR_COM_NB_FINAAOC;"Nombre de logements en accession aidée commencés";
+PHR_COM_NB_FINPTZOC;"Nombre de logements en PTZ commencés";
+PHR_COM_NB_FINAFOC;"Nombre de logements financés autrement commencés";
+PHR_DEC_DATRE;"Date réelle de décision favorable";
+PHR_DEC_ANRE;"Année réelle de décision favorable";
+PHR_DEC_MOIRE;"Mois réel de décision favorable";
+PHR_OC_DATRE;"Date réelle d'ouverture de chantier";
+PHR_OC_ANRE;"Année réelle d'ouverture de chantier";
+PHR_OC_MOIRE;"Mois réel d'ouverture de chantier";
+PHR_AT_DATRE;"Date réelle d'achèvement de chantier";
+PHR_AT_ANRE;"Année réelle d'achèvement de chantier";
+PHR_AT_MOIRE;"Mois réel d'achèvement de chantier";
+PERIODE;"Période (DPC) de dernière mise à jour de la ligne (format JJMMAAAA)";
+PERIODE_AAAAMM;"Période (DPC) de dernière mise à jour de la ligne (format AAAAMM)";
+TPE_COD_TYPPERMIS_NUM;"Code « type de permis »";"1 - Permis de construire (PC)";"2 - Permis d'aménager (PA)";"3 - Déclaration préalable (DP)";"4 - Permis de démolir (PD)"
+PHR_NB_LOG_AUT_ANNUL;"Nombre de logements autorisés annulés";
+PHR_NB_LOG_COM_ANNUL;"Nombre de logements commencés annulés";
+PHR_AUT_SHON_LOC_ANNUL;"Surface de locaux autorisés annulés";
+PHR_COM_SHON_LOC_ANNUL;"Surface de locaux commencés annulés";
+COM_COD_INSEE;"Code INSEE de la commune du lieu des travaux";"Code commune - <a href='https://www.insee.fr/fr/information/2560452' target=""_blank""> cliquer ici</a>"
+
+
+
